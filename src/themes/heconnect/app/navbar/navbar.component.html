@@ -1,0 +1,144 @@
+<!-- <nav [ngClass]="{'open': !(menuCollapsed | async)}" [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' : ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
+  class="navbar navbar-expand-md navbar-light p-0 navbar-container" role="navigation" [attr.aria-label]="'nav.main.description' | translate">
+  <div class="navbar-inner-container w-100 h-100" [class.container]="!(isXsOrSm$ | async)">
+    <a class="navbar-brand my-2" routerLink="/home">
+      <img src="assets/images/dspace-logo.svg" [attr.alt]="'menu.header.image.logo' | translate" />
+    </a>
+
+    <div id="collapsingNav" class="w-100 h-100">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
+        <li *ngIf="(isXsOrSm$ | async) && (isAuthenticated$ | async)">
+            <ds-user-menu [inExpandableNavbar]="true"></ds-user-menu>
+        </li>
+        <li *ngFor="let section of (sections | async)">
+          <ng-container *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-buttons d-flex align-items-center gapx-1">
+      <ds-themed-search-navbar class="navbar-collapsed"></ds-themed-search-navbar>
+      <ds-themed-lang-switch class="navbar-collapsed"></ds-themed-lang-switch>
+      <ds-context-help-toggle class="navbar-collapsed"></ds-context-help-toggle>
+      <ds-themed-auth-nav-menu class="navbar-collapsed"></ds-themed-auth-nav-menu>
+      <ds-impersonate-navbar class="navbar-collapsed"></ds-impersonate-navbar>
+    </div>
+  </div>
+</nav> -->
+
+
+
+
+
+
+
+
+<!-- Topmost Navbar (Black strip with centered white text) -->
+<!-- <div class="topmost-navbar navbar" role="navigation">
+  <div class="navbar-inner-container w-100 h-100 d-flex justify-content-center align-items-center">
+    <span class="navbar-text">HE Connect</span>
+  </div>
+</div> -->
+
+<!-- Top Navbar -->
+<!-- <div class="top-navbar navbar navbar-light" role="navigation" [attr.aria-label]="'nav.top.description' | translate">
+  <div class="navbar-inner-container w-100 h-100">
+    <a class="navbar-brand my-2" routerLink="/home">
+      <img src="/assets/heconnect/images/heconnect-logo.jpeg" [attr.alt]="'menu.header.image.logo' | translate" />
+    </a>
+    <div class="navbar-buttons d-flex align-items-center gapx-1 ms-auto">
+      <ds-themed-search-navbar class="navbar-collapsed"></ds-themed-search-navbar>
+      <ds-themed-lang-switch class="navbar-collapsed"></ds-themed-lang-switch>
+    </div>
+  </div>
+</div> -->
+
+<!-- Bottom Navbar -->
+<!-- <nav [ngClass]="{'open': !(menuCollapsed | async)}"
+     [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' : ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
+     class="bottom-navbar navbar navbar-expand-md navbar-light p-0 navbar-container"
+     role="navigation"
+     [attr.aria-label]="'nav.main.description' | translate">
+  <div class="navbar-inner-container w-100 h-100" [class.container]="!(isXsOrSm$ | async)">
+    <div id="collapsingNav" class="w-100 h-100">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
+        <li *ngIf="(isXsOrSm$ | async) && (isAuthenticated$ | async)">
+            <ds-user-menu [inExpandableNavbar]="true"></ds-user-menu>
+        </li>
+        <li *ngFor="let section of (sections | async)">
+          <ng-container *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-buttons d-flex align-items-center gapx-1">
+      <ds-themed-auth-nav-menu class="navbar-collapsed"></ds-themed-auth-nav-menu>
+      <ds-impersonate-navbar class="navbar-collapsed"></ds-impersonate-navbar>
+      <ds-context-help-toggle class="navbar-collapsed"></ds-context-help-toggle>
+    </div>
+  </div>
+</nav> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Topmost Navbar (Black strip with centered white text) -->
+<div class="topmost-navbar navbar" role="navigation">
+  <div class="navbar-inner-container w-100 h-100 d-flex justify-content-center align-items-center">
+    <span class="navbar-text">ELIBRARY.HECONNECTED.COM</span>
+  </div>
+</div>
+
+<!-- Top Navbar -->
+<div class="top-navbar navbar navbar-light" role="navigation" [attr.aria-label]="'nav.top.description' | translate">
+  <div class="navbar-inner-container w-100 h-100">
+    <a class="navbar-brand my-2 d-flex align-items-center" routerLink="/home">
+      <img src="/assets/heconnect/images/heconnect-logo.jpeg" [attr.alt]="'menu.header.image.logo' | translate" />
+      <div>Investing in future Generations</div>
+    </a>
+    <div class="navbar-buttons d-flex align-items-center gapx-1 ms-auto">
+      <!-- <i class="fas fa-search"></i>
+      <i class="fas fa-globe-asia"></i> -->
+      <ds-themed-search-navbar class="navbar-collapsed navbar-collapsed-white"></ds-themed-search-navbar>
+      <ds-themed-lang-switch class="navbar-collapsed navbar-collapsed-white"></ds-themed-lang-switch>
+    </div>
+  </div>
+</div>
+
+
+<!-- Bottom Navbar -->
+<nav class="bottom-navbar navbar navbar-expand-md navbar-light p-0 navbar-container" role="navigation" [attr.aria-label]="'nav.main.description' | translate">
+  <div class="navbar-inner-container w-100 h-100" [class.container]="!(isXsOrSm$ | async)">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNav" aria-controls="collapsingNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="collapsingNav" class="collapse navbar-collapse w-100 h-100">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
+        <li *ngIf="(isXsOrSm$ | async) && (isAuthenticated$ | async)">
+          <ds-user-menu [inExpandableNavbar]="true"></ds-user-menu>
+        </li>
+        <li *ngFor="let section of (sections | async)">
+          <ng-container *ngComponentOutlet="(sectionMap$ | async).get(section.id)?.component; injector: (sectionMap$ | async).get(section.id)?.injector;"></ng-container>
+        </li>
+      </ul>
+      <div class="navbar-buttons d-flex align-items-center gapx-1">
+        <ds-themed-auth-nav-menu class="navbar-collapsed"></ds-themed-auth-nav-menu>
+        <ds-impersonate-navbar class="navbar-collapsed"></ds-impersonate-navbar>
+        <ds-context-help-toggle class="navbar-collapsed"></ds-context-help-toggle>
+      </div>
+    </div>
+  </div>
+</nav>

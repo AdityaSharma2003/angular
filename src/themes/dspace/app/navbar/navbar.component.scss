@@ -1,0 +1,161 @@
+// nav.navbar {
+//   align-items: baseline;
+
+//   .navbar-inner-container {
+//     border-top: 1px var(--ds-header-navbar-border-top-color) solid;
+//   }
+// }
+
+// .navbar-nav {
+//   background-color: var(--ds-navbar-bg);
+// }
+
+// /** Mobile menu styling **/
+// @media screen and (max-width: map-get($grid-breakpoints, md)-0.02) {
+//   .navbar {
+//     width: 100vw;
+//     background-color: var(--bs-white);
+//     position: absolute;
+//     overflow: hidden;
+//     height: 0;
+//     z-index: var(--ds-nav-z-index);
+//     &.open {
+//       height: 100vh; //doesn't matter because wrapper is sticky
+//       border-bottom: 5px var(--ds-header-navbar-border-bottom-color) solid; // open navbar covers header-navbar-wrapper border
+//     }
+//   }
+// }
+
+// @media screen and (min-width: map-get($grid-breakpoints, md)) {
+//   .reset-padding-md {
+//     margin-left: calc(var(--bs-spacer) / -2);
+//     margin-right: calc(var(--bs-spacer) / -2);
+//   }
+// }
+
+// /* TODO remove when https://github.com/twbs/bootstrap/issues/24726 is fixed */
+// .navbar-expand-md.navbar-container {
+//   @media screen and (max-width: map-get($grid-breakpoints, md)-0.02) {
+//     > .navbar-inner-container {
+//       padding: 0 var(--bs-spacer);
+//       a.navbar-brand {
+//         display: none;
+//       }
+//       .navbar-collapsed {
+//         display: none;
+//       }
+//     }
+//     padding: 0;
+//   }
+//   height: 80px;
+// }
+
+// a.navbar-brand img {
+//   max-height: var(--ds-header-logo-height);
+// }
+
+// .navbar-nav {
+//   ::ng-deep a.nav-link {
+//     color: var(--ds-navbar-link-color);
+
+//     &:hover, &:focus {
+//       color: var(--ds-navbar-link-color-hover);
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Top Navbar Styles
+.top-navbar {
+  background-color: #b3d4fc; // Background color for the top navbar
+
+  .navbar-inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a.navbar-brand img {
+      max-height: var(--ds-header-logo-height); // Adjust logo height
+    }
+  }
+
+  .navbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+// Bottom Navbar Styles
+.bottom-navbar {
+  background-color: #004b7f; // Background color for the bottom navbar
+  align-items: baseline;
+
+  .navbar-inner-container {
+    border-top: 1px var(--ds-header-navbar-border-top-color) solid;
+  }
+
+  .navbar-nav {
+    // background-color: var(--ds-navbar-bg);
+    background-color: #004b7f;
+    ::ng-deep a.nav-link {
+      // color: var(--ds-navbar-link-color); // Link color
+      color: white; // Link color
+
+      &:hover, &:focus {
+        // color: var(--ds-navbar-link-color-hover); // Link color on hover or focus
+        color: orange; // Link color on hover or focus
+      }
+    }
+  }
+
+  // Mobile menu styling
+  @media screen and (max-width: map-get($grid-breakpoints, md)-0.02) {
+    .bottom-navbar {
+      width: 100vw; // Full width
+      background-color: var(--bs-white); // White background
+      position: absolute;
+      overflow: hidden; // Hide overflow
+      height: 0; // Initially collapsed height
+      z-index: var(--ds-nav-z-index); // Z-index for layering
+
+      &.open {
+        height: 100vh; // Full height when open
+        border-bottom: 5px var(--ds-header-navbar-border-bottom-color) solid; // Bottom border when open
+      }
+    }
+  }
+
+  // Styles for larger screens
+  @media screen and (min-width: map-get($grid-breakpoints, md)) {
+    .reset-padding-md {
+      margin-left: calc(var(--bs-spacer) / -2); // Negative left margin
+      margin-right: calc(var(--bs-spacer) / -2); // Negative right margin
+    }
+  }
+
+  /* Temporary fix for Bootstrap issue */
+  .navbar-expand-md.navbar-container {
+    @media screen and (max-width: map-get($grid-breakpoints, md)-0.02) {
+      > .navbar-inner-container {
+        padding: 0 var(--bs-spacer); // Padding for the inner container
+        .navbar-collapsed {
+          display: none; // Hide collapsed items on small screens
+        }
+      }
+      padding: 0; // Remove padding
+    }
+    height: 80px; // Fixed height for the navbar container
+  }
+}
